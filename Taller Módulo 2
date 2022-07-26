@@ -113,6 +113,11 @@ ggplot(data_usuarios,
 ### Rta: Se evidencia que hay una correlación ascendente entre la velocidad del interne y el porcentaje de usuarios, aunque no se
 ### se encuentra tan marcada, debido a que el incremento de cada variable es a diferente velocidad
 
-
+### 5: respecto al grafico, si existe correlación positiva entre las variables velocidad promedio y porcentaje de usarios
+data2 <- data%>%
+	  mutate("porcentaje” = `Internet users` / Population * 100)
+    ggplot(data2, aes(x = `Avg \n(Mbit/s)Ookla`,
+                  y = porcentaje)) +
+  geom_point()
 # ANEXOS: Se adjunta pantallazos de la consola, data y gráfico. ----
 # https://docs.google.com/document/d/1OiVccNIMTxPBV6riL1e47bcDYrc8ZeFhosEvyeMcbkY/edit?usp=sharing
