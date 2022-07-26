@@ -32,7 +32,11 @@ head(data, 10)
 
 ### Paquetes naniar:
 library(naniar)
-
+data2 <- data%>%
+	  mutate("porcentaje” = `Internet users` / Population * 100)
+    ggplot(data2, aes(x = `Avg \n(Mbit/s)Ookla`,
+                  y = porcentaje)) +
+  geom_point()
 ### Creación dataframe para datos faltantes:
 datos_faltantes <- data.frame(miss_var_summary(data))
 
